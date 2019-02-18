@@ -1,16 +1,16 @@
 ##### Pairwise differences in genome-wide means
-
 library(ggplot2)
 library(magrittr)
 library(dplyr)
 library(gplots)
+library(viridis)
 library(ggthemes)
 library(reshape2)
 library(tidyverse)
 library(ggsci)
 library(plyr)
 
-inter.intra.df.l <- read.table("/Users/abbas/Documents/analysis_05.07.18/190212_interIntra_windowsLong.txt", 
+inter.intra.df.l <- read.table("interIntra_windowsLong.txt", 
                                header = T, 
                                sep = "\t",
                                na.strings = NA,

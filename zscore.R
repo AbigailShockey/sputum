@@ -10,8 +10,7 @@ library(tidyverse)
 library(ggsci)
 library(plyr)
 
-#### Distribution of nucleotide diversity in sliding windows
-genes.inter.intra.df <- read.table("190214_interIntra_perGenePi.txt", 
+genes.inter.intra.df <- read.table("interIntra_perGenePi.txt", 
                                    header = T, 
                                    sep = "\t",
                                    na.strings = NA,
