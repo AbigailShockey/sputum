@@ -1,3 +1,14 @@
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+library(gplots)
+library(ggthemes)
+library(reshape2)
+library(tidyverse)
+library(ggsci)
+library(plyr)
+
+### read in p-values from Fisher's exact test per gene
 fet.df <- read.table("pvalsFstFishersExact.txt", 
                                    header = T, 
                                    sep = "\t",
@@ -6,12 +17,16 @@ fet.df <- read.table("pvalsFstFishersExact.txt",
 
 
 fet.df <- as.tibble(fet.df)
+
+### set col names
 colnames(fet.df) <- c("Patient","Gene","neglog10pval")
 
 sig.fet.df <- NULL
 
+### vector of patients
 patients <- c(unique(as.character(fet.df$Patient)))
 
+### calculate p-value from -log10() transformed value and fdr adjusted p-value per gene in each patient
 for (x in patients) {
   p.fet.df <- fet.df[which(as.character(fet.df$Patient) == x),]
   correction.l <- length(p.fet.df$Gene)
@@ -25,9 +40,7 @@ for (x in patients) {
   }
 }
 
+### table of outlier genes and their frequency, ordered from high to low frequency
 sig.fet.df$Gene <- as.character(sig.fet.df$Gene) 
 n.occur.fst <- data.frame(table(sig.fet.df$Gene))
-
-n.occur.fst$Freq <- as.numeric(n.occur.fst$Freq) 
-n.occur.fst <- n.occur.fst[n.occur.fst$Freq > 1,]
 n.occur.fst <- n.occur.fst[order(n.occur.fst$Freq, decreasing = T),]
