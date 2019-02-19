@@ -9,14 +9,14 @@ use Cwd;
 use Getopt::Long;
 
 ###############################################################################################
-# These are pointers to relevant directories. Should be looked at and changed before running  #
+# These are pointers to relevant directories. Modify before running script #
 ###############################################################################################
 
-my $progDir = "/opt/PepPrograms";
-my $krakenDir = "/opt/PepPrograms";
-my $krakenDB = "/home/yudong/DB";
-my $dataDir = "/opt/data";
-my $sam = "${progDir}/samtools-1.2/samtools";
+my $progDir = "path to program directory";
+my $krakenDir = "path to kraken directory";
+my $krakenDB = "path to kraken DB";
+my $dataDir = "path to data directory";
+my $sam = "path to samtools";
 
 
 my $pwd = cwd();
