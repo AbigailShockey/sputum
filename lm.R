@@ -62,5 +62,4 @@ outlier.genes <- d[which(d$outlier==TRUE),]
 
 ### table of outlier genes and their frequency, ordered from high to low frequency
 n.occur.lm <- data.frame(table(lm.df$Gene))
-n.occur.lm <- n.occur.lm[n.occur.lm$Freq > 1,]
 n.occur.lm <- n.occur.lm[order(n.occur.lm$Var1, decreasing = T),]
