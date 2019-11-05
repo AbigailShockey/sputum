@@ -1,1 +1,1 @@
-#### Scripts and data associated with Shockey et al. 2019, [Effects of Host, Sample, and *in vitro* Culture on Genomic Diversity of Pathogenic *Mycobacteria*](https://www.ncbi.nlm.nih.gov/pubmed/31214242)
+#### Scripts and data associated with Shockey et al. 2019, [Effects of Host, Sample, and *in vitro* Culture on Genomic Diversity of Pathogenic Mycobacteria](https://www.ncbi.nlm.nih.gov/pubmed/31214242)
